@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/picture_frame"
+	android:paddingBottom="10dp"> 
+	
+    <TextView
+            android:id="@+id/txtvTripInfoDesc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/grey"
+            android:gravity="left"
+        	android:paddingLeft="10dp"
+        	android:paddingTop="15dp"
+            android:text="Trip info"
+            android:textSize="14sp" 
+            android:textColor="@color/darkTurquoise"/>
+    
+    <LinearLayout 
+        android:id="@+id/linLayComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtvTripInfoDesc2"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        
+        android:orientation="vertical">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+            
+            <TextView 
+	        	android:id="@+id/txtvCommentsDesc"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="9"
+	            android:paddingLeft="5dp"
+	            android:gravity="center_vertical"
+	            android:textColor="@color/lighTurquoise"
+	            android:text=" "
+	            android:visibility="gone"/>
+            
+<!--             <TextView  -->
+<!-- 	        	android:id="@+id/txtvCommentsXp" -->
+<!-- 	            android:layout_width="0dp" -->
+<!-- 	            android:layout_height="match_parent" -->
+<!-- 	            android:layout_weight="1" -->
+<!-- 	            android:gravity="center_vertical" -->
+<!-- 	            android:textSize="12sp" -->
+<!-- 	            android:textColor="@color/darkGrey" -->
+<!-- 	            android:text="10xp"/> -->
+            
+        </LinearLayout>
+	        
+        <EditText 
+            android:id="@+id/etxtComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:maxLines="4"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Notes on key sightings and journey"
+            android:textColorHint="@color/lightTurquoiseFaded"
+            android:textSize="14sp"/>   
+       
+        
+    </LinearLayout>
+    
+    <View 
+        android:id="@+id/divComments"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/linLayComments"
+        android:background="@android:drawable/divider_horizontal_textfield"/>
+    
+    <LinearLayout 
+        android:id="@+id/linLayRatingDriving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_below="@id/divComments"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:background="@color/grey">
+            
+            <TextView 
+	        	android:id="@+id/txtvRatingDrivingDesc"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="9"
+	            android:paddingLeft="5dp"
+	            android:gravity="center_vertical"
+	            android:textColor="@color/lighTurquoise"
+	            android:text="Driving Style"/>
+            
+<!--             <TextView  -->
+<!-- 	        	android:id="@+id/txtvRatingDrivingXp" -->
+<!-- 	            android:layout_width="0dp" -->
+<!-- 	            android:layout_height="match_parent" -->
+<!-- 	            android:layout_weight="1" -->
+<!-- 	            android:gravity="center_vertical" -->
+<!-- 	            android:textSize="12sp" -->
+<!-- 	            android:textColor="@color/darkGrey" -->
+<!-- 	            android:text="10xp"/> -->
+            
+        </LinearLayout>
+	        
+            
+        <RatingBar 
+            android:id="@+id/ratbDriving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:numStars="5"/>
+        
+        </LinearLayout>
+        
+    <LinearLayout 
+        android:id="@+id/linLayRatingSaftey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linLayRatingDriving"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:background="@color/grey">
+            
+            <TextView 
+	        	android:id="@+id/txtvRatingSafteyDesc"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="9"
+	            android:paddingLeft="5dp"
+	            android:gravity="center_vertical"
+	            android:textColor="@color/lighTurquoise"
+	            android:text="Saftey"/>
+            
+<!--             <TextView  -->
+<!-- 	        	android:id="@+id/txtvRatingSafteyXp" -->
+<!-- 	            android:layout_width="0dp" -->
+<!-- 	            android:layout_height="match_parent" -->
+<!-- 	            android:layout_weight="1" -->
+<!-- 	            android:gravity="center_vertical" -->
+<!-- 	            android:textSize="12sp" -->
+<!-- 	            android:textColor="@color/darkGrey" -->
+<!-- 	            android:text="10xp"/> -->
+            
+        </LinearLayout>
+	        
+            
+        <RatingBar 
+            android:id="@+id/ratbSaftey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:numStars="5"/>
+        
+        </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/linLayRatingComfort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linLayRatingSaftey"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="vertical" >
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:background="@color/grey">
+            
+            <TextView 
+	        	android:id="@+id/txtvRatingComfortDesc"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="9"
+	            android:paddingLeft="5dp"
+	            android:gravity="center_vertical"
+	            android:textColor="@color/lighTurquoise"
+	            android:text="Comfort"/>
+            
+<!--             <TextView  -->
+<!-- 	        	android:id="@+id/txtvRatingComfortXp" -->
+<!-- 	            android:layout_width="0dp" -->
+<!-- 	            android:layout_height="match_parent" -->
+<!-- 	            android:layout_weight="1" -->
+<!-- 	            android:gravity="center_vertical" -->
+<!-- 	            android:textSize="12sp" -->
+<!-- 	            android:textColor="@color/darkGrey" -->
+<!-- 	            android:text="10xp"/> -->
+            
+        </LinearLayout>
+	        
+            
+        <RatingBar 
+            android:id="@+id/ratbComfort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:numStars="5"/>
+        
+        </LinearLayout>     
+    
+</RelativeLayout>

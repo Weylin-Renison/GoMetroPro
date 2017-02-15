@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+        dexOptions{
+            javaMaxHeapSize "4g"
+        }
+
+    signingConfigs {
+        config {
+            keyAlias 'GoMetroAdmin'
+            keyPassword 'admin@gometro.co.za'
+            storeFile file('/Users/wprenison/Desktop/AndroidProjects/GoMetroAndroidStudioKeyStore.jks')
+            storePassword 'N@p0leon'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion '24.0.3'
+    defaultConfig {
+        applicationId "com.gometro.gometropro"
+        minSdkVersion 13
+        targetSdkVersion 23
+        signingConfig signingConfigs.config
+
+        multiDexEnabled false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    compile 'com.android.support:support-v4:25.0.1'
+    compile 'com.google.protobuf:protobuf-java:2.6.1'
+//    compile 'com.google.android.gms:play-services:+'
+    compile 'com.google.android.gms:play-services-maps:10.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile files('libs/android-async-http-1.4.3.jar')
+//    compile files('libs/acra-4.6.2.jar')
+//    compile files('libs/osmdroid-android-3.0.8.jar')
+    compile files('libs/simplelatlng-1.1.0.jar')
+//    compile files('libs/slf4j-android-1.5.8.jar')
+}

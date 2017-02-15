@@ -1,0 +1,81 @@
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	tools:context=".UploadActivity"
+	android:id="@+id/cordLayUploadWrapper"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:src="@drawable/ic_cloud_big"/>
+
+		<TextView
+			android:id="@+id/txtvUploadCount"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:layout_alignParentRight="true"
+			android:text="0"/>
+
+		<TextView
+			android:id="@+id/txtvUploadCountLabel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:layout_toLeftOf="@id/txtvUploadCount"
+			android:text="@string/txtvUploadCountLabel"/>
+
+		<ListView
+			android:id="@+id/lstvUploadRoutes"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/txtvUploadCount"/>
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:id="@+id/linLayFloatBtnHistory"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_margin="16dp"
+		android:layout_gravity="end|bottom"
+		android:clickable="true"
+		android:onClick="onClickNewPlan"
+		app:layout_behavior="com.gometro.gometropro.MoveUpwardBehavior">
+
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/ibtnHistory"
+			android:layout_width="56dp"
+			android:layout_height="56dp"
+			android:layout_margin="8dp"
+			android:layout_gravity="center_horizontal"
+			app:backgroundTint="@color/white"
+			android:src="@drawable/ic_history_clock_accent"
+			android:onClick="onClickHistory"/>
+
+		<TextView
+			android:id="@+id/txtvSeavedRoutesBtnHistoryDesc"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/btnHistoryLabel"
+			android:clickable="true"
+			android:textColor="@color/darkGrey"
+			android:onClick="onClickHistory"/>
+
+	</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,374 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <View 
+        android:id="@+id/vAnchor"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/accent"
+        android:layout_centerVertical="true"/>
+    
+    <RelativeLayout
+        android:id="@+id/linLayWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/vAnchor"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="-2dp" >
+
+        <ImageView
+            android:id="@+id/imgvMainBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_flat"/>
+        
+        <ImageView 
+            android:id="@+id/imgvLogo"
+            android:layout_width="170dp"
+            android:layout_height="95dp"
+            android:paddingLeft="20dp"
+            android:src="@drawable/logo"/>
+        
+    </RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/relLayPromptUserID"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_below="@id/vAnchor"
+		android:visibility="gone">
+
+		<View
+			android:id="@+id/vAnchorCenter"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_centerInParent="true"/>
+
+		<android.support.design.widget.TextInputLayout
+			android:id="@+id/ilIdNumber"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="30dp"
+			android:layout_centerHorizontal="true"
+			android:layout_above="@id/vAnchorCenter">
+
+			<EditText
+				android:id="@+id/etxtIdNumber"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="number"
+				android:ems="13"
+				android:maxLength="13"
+				android:hint="SA ID Number"
+				android:textColorHint="@color/accent"/>
+
+		</android.support.design.widget.TextInputLayout>
+
+		<TextView
+			android:id="@+id/txtBtnStartSession"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/ilIdNumber"
+			android:layout_alignRight="@id/ilIdNumber"
+			android:textColor="@color/accent"
+			android:elevation="5dp"
+			android:text="START SESSION"
+			android:clickable="true"
+			android:onClick="onClickStartSession"/>
+
+		<ProgressBar
+			android:id="@+id/progbStartSession"
+			android:indeterminate="true"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			style="?android:attr/progressBarStyle"
+			android:layout_centerHorizontal="true"
+			android:layout_alignTop="@id/ilIdNumber"
+			android:visibility="invisible"/>
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:id="@+id/linLayRootActionBtns"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/vAnchor"
+		android:orientation="vertical"
+		android:visibility="visible">
+
+		<LinearLayout
+			android:id="@+id/linLayBtnActionsRow1"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:layout_weight="1">
+
+			<LinearLayout
+				android:id="@+id/linLayBtnNewRoute"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/btnNewRoute"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_pencil_accent"
+					android:onClick="onClickNewRoute"/>
+
+				<TextView
+					android:id="@+id/btnDescNewRoute"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:paddingLeft="-4dp"
+					android:paddingRight="-3dp"
+					android:gravity="center"
+					android:text="@string/btnNewRouteText"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/linLayBtnSavedRoutes"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:paddingLeft="9dp"
+				android:paddingRight="8dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/btnSavedRoutes"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_pie_circle_accent"
+					android:onClick="onClickSavedRoutes" />
+
+				<TextView
+					android:id="@+id/btnDescSavedRoutes"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:paddingLeft="2dp"
+					android:gravity="center"
+					android:text="@string/btnSavedRoutesText"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/linLayBtnUpload"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/btnUpload"
+					android:layout_width="wrap_content"
+					android:layout_height="56dp"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_cloud_accent"
+					android:onClick="onClickUpload" />
+
+				<TextView
+					android:id="@+id/btnDescUpload"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:gravity="center"
+					android:text="@string/btnUploadText"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/linLayBtnActionsRow2"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:layout_weight="1">
+
+			<LinearLayout
+				android:id="@+id/linLayBtnHistory"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<!--<ImageButton-->
+					<!--android:id="@+id/btnHistory"-->
+					<!--android:layout_width="match_parent"-->
+					<!--android:layout_height="72dp"-->
+					<!--android:scaleType="fitCenter"-->
+					<!--android:background="@null"-->
+					<!--android:src="@drawable/selector_planning_button"-->
+					<!--android:onClick="onClickUploadPhoto"/>-->
+
+				<android.support.design.widget.FloatingActionButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_history_clock_accent"
+					android:onClick="onClickHistory"/>
+
+				<TextView
+					android:id="@+id/btnDescHistory"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:paddingLeft="-4dp"
+					android:paddingRight="-3dp"
+					android:gravity="center"
+					android:text="@string/btnHistoryLabel"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/linLayBtnUploadPhoto"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/btnUploadPhoto"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_camera_accent"
+					android:onClick="onClickUploadPhoto"/>
+
+				<TextView
+					android:id="@+id/btnDescUploadPhoto"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:paddingLeft="-4dp"
+					android:paddingRight="-3dp"
+					android:gravity="center"
+					android:text="@string/btnUploadPhoto"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/linLayBtnStats"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+				<android.support.design.widget.FloatingActionButton
+					android:id="@+id/btnStats"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:layout_gravity="center_horizontal"
+					app:backgroundTint="@color/white"
+					android:src="@drawable/ic_heart_beat_accent"
+					android:onClick="onClickStats"/>
+
+				<TextView
+					android:id="@+id/btnDescStats"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:paddingLeft="-4dp"
+					android:paddingRight="-3dp"
+					android:gravity="center"
+					android:text="@string/btnStatsLabel"
+					android:textColor="#aaa" />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:orientation="horizontal">
+
+		</LinearLayout>
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Schedule Test"-->
+            <!--android:onClick="onClickTestSchedule"/>-->
+		
+        <!--<LinearLayout -->
+            <!--android:id="@+id/linLayBtnRoutesNearMe"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"    -->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="vertical">-->
+        <!---->
+		    <!--<ImageButton-->
+		        <!--android:id="@+id/btnRoutesNearMe"-->
+		        <!--android:layout_width="match_parent"-->
+		        <!--android:layout_height="wrap_content"		        -->
+		        <!--android:background="@null"-->
+		        <!--android:src="@drawable/selector_routes_button"-->
+		        <!--android:onClick="onClickRoutesNearMe" />-->
+		    <!---->
+		    <!--<TextView-->
+	        	<!--android:id="@+id/btnDescRoutesNearMe"-->
+	        	<!--android:layout_width="match_parent"-->
+	        	<!--android:layout_height="wrap_content"-->
+	        	<!--android:layout_marginTop="3dp"-->
+	        	<!--android:gravity="center"-->
+	        	<!--android:text="@string/btnRoutesNearMeText"-->
+	        	<!--android:textColor="#aaa" /> 	-->
+		        <!---->
+		<!--</LinearLayout>-->
+	    
+	</LinearLayout> 
+	
+    <TextView
+	        android:id="@+id/UnitIdText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/linLayRootActionBtns"
+	        android:text=""
+	        android:textColor="#aaa"
+	        android:textSize="30sp"
+	        android:visibility="gone" />   
+	
+	    <TextView
+	        android:id="@+id/UserNameText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/linLayRootActionBtns"
+	        android:text=""
+	        android:textColor="#aaa" 
+	        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="12dp"
+    android:background="@android:drawable/dialog_holo_light_frame" >
+   
+    <ImageView 
+        android:id="@+id/imgvTransportMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_train"/>
+    
+    <LinearLayout 
+        android:id="@+id/linLayHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgvTransportMode"
+        android:orientation="horizontal">
+        
+		<TextView 
+		    android:id="@+id/txtvRouteNameHeading"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"			    
+		    android:textSize="20sp"
+		    android:text="Abc route"/>
+		
+		<TextView 
+	        android:id="@+id/txtvTransportCompany"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"	
+	        android:paddingRight="10dp"        
+	        android:gravity="center|right"      
+	        android:text="My Citi"
+	        android:textSize="10sp"/>
+		
+	</LinearLayout>
+    
+	<LinearLayout 
+	    android:id="@+id/linLayFromTo"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/linLayHeading"
+	    android:layout_toRightOf="@id/imgvTransportMode"
+	    android:orientation="horizontal">
+	    
+	    <TextView
+	        android:id="@+id/txtvStartPoint"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:textSize="12sp"
+	        android:text="Bellville" />
+	    
+	    <TextView
+	        android:id="@+id/txtvToConcat"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"	        
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:textSize="12sp"
+	        android:textColor="@color/lighTurquoise"
+	        android:text="to"
+			android:visibility="invisible"/>
+	    
+	    <TextView
+	        android:id="@+id/txtvEndPoint"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:textSize="12sp"
+	        android:text="Cape Town"
+			android:visibility="invisible"/>
+	    
+	</LinearLayout>
+    
+    <!-- Hidden fields -->
+    <TextView 
+        android:id="@+id/txtvTransportMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    
+   </RelativeLayout>

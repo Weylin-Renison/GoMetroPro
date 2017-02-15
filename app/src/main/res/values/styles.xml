@@ -1,0 +1,57 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <!-- Home Style -->
+    <style name="HomeTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/HomeActionBarStyle</item>
+        <item name="actionBarStyle">@style/HomeActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/ActionBarMenuIcon</item>
+        <item name="actionOverflowButtonStyle">@style/ActionBarMenuIcon</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.AppCompat.Light"/>
+    
+    <style name="MenuOverlayActionBarStyle" parent="Theme.AppCompat.Light">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarStyle">@style/HomeActionBarStyle</item>
+        <item name="actionBarStyle">@style/HomeActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/ActionBarMenuIcon</item>
+    </style>
+    
+    <!-- Action Bar Styles -->
+    <style name="HomeActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/accent</item>
+        <item name="background">@color/accent</item>
+    </style>
+        
+    <style name="MenuActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="icon">@android:color/transparent</item>
+    </style>
+
+    <!-- Options menu button icon -->
+    <style name="ActionBarMenuIcon" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+        <item name="background">?android:attr/actionBarItemBackground</item>
+    </style>
+    
+</resources>

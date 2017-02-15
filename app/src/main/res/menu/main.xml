@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item 
+        android:id="@+id/menu_login"
+        android:orderInCategory="1"
+        android:title="@string/menu_login"
+        android:visible="false"/>
+    
+    <item 
+        android:id="@+id/menu_signup"
+        android:orderInCategory="2"
+        android:title="@string/menu_signup"
+        android:visible="false"/>
+    
+    <item 
+        android:id="@+id/menu_profile"
+        android:orderInCategory="3"
+        android:title="@string/menu_profile"/>
+    
+<!--     <item  -->
+<!--         android:id="@+id/menu_register_phone" -->
+<!--         android:orderInCategory="3" -->
+<!--         android:title="@string/menu_register_phone"/> -->
+    
+<!--     <item -->
+<!--         android:id="@+id/menu_settings" -->
+<!--         android:orderInCategory="100" -->
+<!--         android:title="@string/action_settings" -->
+        />
+
+</menu>

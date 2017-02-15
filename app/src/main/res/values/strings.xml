@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GoMetro Pro</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Activity Titles -->
+    <string name="title_activity_main">app</string>
+    <string name="title_activity_login">Sign In</string>
+    <string name="title_activity_saved_routes">Saved Routes</string>
+    <string name="title_activity_routes">Routes</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_register_user">Sign Up</string>
+    <string name="title_activity_new_route">New Route</string>
+    <string name="title_activity_edit_route">Edit</string>
+
+    <!-- Error Msgs -->
+    <string name="error_msg_cannot_be_empty">Cannot be empty</string>
+    <string name="error_msg_select_an_item">An item must be selected</string>
+    <string name="error_msg_invalid_id_number">Not a valid SA ID Number</string>
+    <string name="error_msg_id_number_to_short">ID Number shorter than 13 digits</string>
+
+    <!-- Activity New Route -->
+    <string name="etxtMapperName">Mapper Name</string>
+    <string name="etxtRouteName">Route ID</string>
+    <string name="etxtTransportCompanyHint">Transport Company</string>
+    <string name="etxtStartPointHint">License Plate</string>
+    <string name="etxtEndPointHint">Confirm License Plate</string>
+
+    <!-- Main Menu -->
+    <string name="btnUploadPhoto">Upload Photo</string>
+    <string name="btnNewRouteText">New Route</string>
+    <string name="btnPlanningContDesc">Button Planning</string>
+    <string name="btnCaptureText">Capture</string>
+    <string name="btnCaptureContDesc">Button Capture</string>
+    <string name="btnSavedRoutesText">Saved Routes</string>
+    <string name="btnReviewContDesc">Button Review</string>
+    <string name="btnUploadText">Upload</string>
+    <string name="btnUploadContDesc">Button Upload</string>
+    <string name="btnRoutesNearMeText">Routes Near Me</string>
+    <string name="btnRoutesNearMeContDesc">Button Routes Near Me</string>
+    <string name="btnProfileContDesc">Button Profile</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_signup">Sign Up</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_register_phone">Register Phone</string>
+    <string name="txtvSignInHeading">Sign In</string>
+    <string name="etxtEmailHint">Email</string>
+    <string name="etxtPasswordHint">Password</string>
+    <string name="btnSignInText">Sign In</string>
+    <string name="btnRegisterText">Register</string>
+    <string name="txtvSignInHeadingContentDesc">Heading sign in</string>
+    <string name="etxtEmailContentDesc">Text Box Enter Email</string>
+    <string name="etxtPasswordContentDesc">Text Box Enter Password</string>
+    <string name="btnSignInContentDesc">Button Sign In</string>
+    <string name="btnRegisterContentDesc">Button Register</string>
+    <string name="txtvRegisterHeading">Register</string>
+    <string name="txtvRegisterHeadingContentDesc">Heading Register</string>
+    <string name="etxtFullNameHint">Name &amp; Surname</string>
+    <string name="etxtConfirmPasswordHint">Retype Password</string>
+    <string name="cbRemberMeText">Remember Me</string>
+    <string name="btnStatsLabel">Stats</string>
+
+    <!-- Fragment Main Capture -->
+    <string name="txtvMapperNameDesc">Mapper Name:</string>
+    <string name="txtvRouteNameDesc">Route Name:</string>
+    <string name="txtvToDesc">to</string>
+
+    <!--Upload-->
+    <string name="txtvUploadCountLabel">Items:</string>
+    <string name="btnHistoryLabel">History</string>
+
+    <!--History-->
+    <string name="txtvHistoryCountLabel">Items:</string>
+
+    <string-array name="reason_for_trip_array">
+        <item>Work</item>
+        <item>School</item>
+        <item>Shopping</item>
+        <item>Visiting</item>
+        <item>Medical Care</item>
+        <item>Entertainment</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="transport_mode_array">
+        <item>Mode of Transport</item>
+        <item>Bus</item>
+        <item>Rail</item>
+        <item>Ferry</item>
+        <item>Cable Car</item>
+        <item>Funicular</item>
+        <item>Minibus Taxi</item>
+        <item>Subway / Metro</item>
+        <item>Tram / Light Rail</item>
+    </string-array>
+
+    <string name="title_activity_capture">Capture</string>
+    <string name="title_activity_upload">Upload</string>
+    <string name="title_activity_google_map">View Route</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_schedule">scheduleActivity</string>
+
+    <!-- Pemission Explanations -->
+    <string name="perm_ex_read_external_storage">In order to export a route we need to have
+        permission to access your device\'s memory
+    </string>
+    <string name="perm_ex_access_fine_location">In order to record a route we need to have
+        permission to access your device\'s location
+    </string>
+
+</resources>

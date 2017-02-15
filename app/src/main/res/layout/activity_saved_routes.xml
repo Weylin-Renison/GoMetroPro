@@ -1,0 +1,53 @@
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/cordLayWrapper"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".SavedRoutesActivity">
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:src="@drawable/ic_pie_circle_big"/>
+
+	<ListView
+		android:id="@+id/lstvSavedRoutes"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_alignParentTop="true"/>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_alignParentBottom="true"
+		android:layout_margin="16dp"
+		android:layout_gravity="end|bottom"
+		app:layout_behavior="com.gometro.gometropro.MoveUpwardBehavior">
+
+		<android.support.design.widget.FloatingActionButton
+			android:id="@+id/ibtnNewPlan"
+			android:layout_width="56dp"
+			android:layout_height="56dp"
+			android:layout_margin="8dp"
+			app:backgroundTint="@color/white"
+			android:src="@drawable/ic_pencil_accent"
+			android:onClick="onClickNewPlan"/>
+
+		<TextView
+			android:id="@+id/txtvSeavedRoutesBtnNewPlanDesc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:layout_gravity="center_horizontal"
+			android:text="New Plan"
+			android:textColor="@color/darkGrey"
+			android:clickable="true"
+			android:onClick="onClickNewPlan"/>
+
+	</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mainBackground">#ecf0f1</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#e9ebeb</color>
+    <color name="medGrey">#c6c7c7</color>
+    <color name="darkGrey">#adafaf</color>
+    <color name="lightBlue">#03caed</color>
+    <color name="lighTurquoise">#00c6ec</color>
+    <color name="lightTurquoiseFaded">#8000c6ec</color>
+    <color name="darkTurquoise">#007a90</color>
+    <color name="red">#c0392b</color>
+    <color name="transparent">#FF000000</color>
+    <color name="accent">#FF009688</color>
+</resources>

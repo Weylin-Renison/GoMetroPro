@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/linLayProjectCodeMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spnrProjectCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/txtvProjectCodeError"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:editable="false"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progbProjectCode"
+            android:indeterminate="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="?android:attr/progressBarStyle"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+
+        <EditText
+            android:id="@+id/etxtUploadPhotoDescriptionDialogValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:hint="Photo Description"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/medGrey"
+            android:textAppearance="?android:attr/textAppearanceMedium">
+
+            <requestFocus/>
+
+        </EditText>
+
+
+        <ImageView
+            android:id="@+id/imgvUploadPhotoDialogImagePreview"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnStopNameDialogAddPhoto"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/selector_upload_photo"/>
+
+        <Button
+            android:id="@+id/btnUploadPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Upload"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

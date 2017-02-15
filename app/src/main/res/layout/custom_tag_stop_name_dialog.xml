@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/DialogStyle"
+    style="@style/DialogStyle"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <!--<TextView-->
+        <!--android:id="@+id/txtvStopNameDialogHeading"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Stop Name"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"/>-->
+
+    <!--<TextView
+        android:id="@+id/txtvStopNameDialogInstructions"
+        android:layout_below="@id/txtvStopNameDialogHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="Enter the name of the stop. If you do not know the name of the stop just leave it blank."
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilStopNameDialogValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/etxtStopNameDialogValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Stop Name"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/medGrey"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linLayFarePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/tilStopNameDialogValue">
+
+        <TextView
+            android:id="@+id/txtvFarePriceCurrency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:textColor="@color/accent"
+            android:gravity="bottom|right"
+            android:textSize="16sp"
+            android:text="R"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginRight="5dp">
+
+            <EditText
+                android:id="@+id/etxtFarePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="6"
+                android:hint="Fare Price"
+                android:textSize="16sp"
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/medGrey"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:imeOptions="actionDone"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txtvWaitingTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_weight="5"
+            android:textColor="@color/accent"
+            android:gravity="bottom|right"
+            android:textSize="16sp"
+            android:text="Time:"/>
+
+        <Chronometer
+            android:id="@+id/chronStopDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:layout_weight="5"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/medGrey"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <!--<EditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="5"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:textSize="16sp"-->
+            <!--android:hint="Waiting Time"-->
+            <!--android:inputType="time"-->
+            <!--android:background="@drawable/selector_etxt_states"/>-->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtvPassCountHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/linLayFarePrice"
+        android:gravity="center"
+        android:text="Passenger Counts"
+        android:textColor="@color/accent"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txtvTotalPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/txtvPassCountHeading"
+        android:text="Total Passengers:"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/txtvTotalPassValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtvPassCountHeading"
+        android:layout_toRightOf="@id/txtvTotalPass"
+        android:text="0"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/linLayPassCounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/txtvTotalPass"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/ibtnAddPass"
+                android:layout_width="64sp"
+                android:layout_height="64sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                app:backgroundTint="@color/white"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_plus"
+                android:background="@null"/>
+
+            <Button
+                android:id="@+id/btnClearBoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/accent"
+                android:layout_below="@id/ibtnAddPass"
+                android:background="@null"/>
+
+            <ImageView
+                android:id="@+id/ivBadgeBgAddPass"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginTop="14sp"
+                android:layout_marginRight="10.5sp"
+                android:layout_alignRight="@id/ibtnAddPass"
+                android:elevation="12dp"
+                android:src="@drawable/bg_badge"/>
+
+            <TextView
+                android:id="@+id/txtvBoardPassValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignRight="@id/ibtnAddPass"
+                android:text="0"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:elevation="12dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/ibtnStopNameDialogAddPhoto"
+                android:layout_width="64sp"
+                android:layout_height="64sp"
+                android:layout_centerHorizontal="true"
+                app:backgroundTint="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_camera_accent"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/ibtnMinusPass"
+                android:layout_width="64sp"
+                android:layout_height="64sp"
+                android:layout_centerHorizontal="true"
+                app:backgroundTint="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_minus"/>
+
+            <Button
+                android:id="@+id/btnClearAlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:textColor="@color/accent"
+                android:textSize="12sp"
+                android:background="@null"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ibtnMinusPass"/>
+
+            <ImageView
+                android:id="@+id/ivBadgeBgMinusPass"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginTop="14sp"
+                android:layout_marginLeft="10.5sp"
+                android:layout_alignLeft="@id/ibtnMinusPass"
+                android:src="@drawable/bg_badge"
+                android:elevation="12dp"/>
+
+            <TextView
+                android:id="@+id/txtvAlightPassValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/ibtnMinusPass"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="0"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:elevation="12dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgvStopNameDialogImagePreview"
+        android:layout_below="@id/linLayPassCounts"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="5dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/accent"
+        android:textSize="14sp"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linLayPassCounts"/>
+
+    <Button
+        android:id="@+id/btnMovePrevStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOVE PREV STOP"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/accent"
+        android:textSize="14sp"
+        android:background="@null"
+        android:layout_below="@id/linLayPassCounts"
+        android:layout_toLeftOf="@id/btnDone"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

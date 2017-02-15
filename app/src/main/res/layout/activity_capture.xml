@@ -1,0 +1,122 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/relLayMainCapture"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".CaptureActivity"
+        android:background="@color/mainBackground">
+
+        <FrameLayout
+            android:id="@+id/fLayFragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp">
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayCaptureActionButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/linLayTabStatus"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ibtnCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:clickable="true"
+                android:onClick="onClickCancel"
+                android:text="CANCEL"/>
+
+            <LinearLayout
+                android:id="@+id/linLayStartStopButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="onClickStartStop"
+                android:orientation="vertical">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/ibtnStartStop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:backgroundTint="@color/white"
+                    android:onClick="onClickStartStop"
+                    android:src="@drawable/ic_record" />
+
+                <TextView
+                    android:id="@+id/txtvStartStopDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="Start"
+                    android:clickable="true"
+                    android:onClick="onClickStartStop"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtvDone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:onClick="onClickDone"
+                android:clickable="true"
+                android:text="FINISH"
+                android:visibility="invisible"
+                android:textColor="@color/accent">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linLayTabStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/fLayFragContainer"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imgvTab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tab_active"/>
+
+            <ImageView
+                android:id="@+id/imgvTab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/tab_in_active"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
